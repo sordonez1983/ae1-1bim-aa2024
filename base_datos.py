@@ -6,10 +6,10 @@ if not os.path.exists('localesComida_centrosDeportivos.db'):
   print("Error: El archivo de base de datos 'localesComida_centrosDeportivos.db' no existe.")
   exit(1)
 
-
+#prueba de actualizacion ramados
 # Create engine with connection options
 engine = create_engine(
-    'sqlite:///localesComida_centrosDeportivos333.db',
+    'sqlite:///localesComida_centrosDeportivos.db',
     pool_size=5,
     connect_args={'check_same_thread': False}
 )
