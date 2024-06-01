@@ -2,14 +2,14 @@ import os
 from sqlalchemy import create_engine
 
 # Check database file existence
-if not os.path.exists('localesComida_centrosDeportivos.db'):
-  print("Error: El archivo de base de datos 'localesComida_centrosDeportivos.db' no existe.")
+if not os.path.exists('Listado_de_establecimientos_de_comida_centros deportivos.db'):
+  print("Error: El archivo de base de datos 'Listado_de_establecimientos_de_comida_centros deportivos.db' no existe.")
   exit(1)
 
 
 # Create engine with connection options
 engine = create_engine(
-    'sqlite:///localesComida_centrosDeportivos.db',
+    'sqlite:///Listado_de_establecimientos_de_comida_centros deportivos.db',
     pool_size=5,
     connect_args={'check_same_thread': False}
 )
