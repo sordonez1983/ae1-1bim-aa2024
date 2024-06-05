@@ -13,11 +13,11 @@ Session = sessionmaker(bind=engine) # Se usa el engine
 session = Session()
 
 # Obtener todos los registros de la entidad Autor. Se hace uso del método query. all, significa que se obtiene todos los registros
-LocalesComida = session.query(CuentasAhorro).all()
+CuentasAhorro = session.query(CuentasAhorro).all()
 
 # se realiza un proceso iterativo para presentar la información
 # de cada objeto.
-for cuenta_ahorro in LocalesComida:
+for cuenta_ahorro in CuentasAhorro:
     # Acceso a todos los atributos de cuenta_ahorro aqui
     print(f"Número de cuenta: {cuenta_ahorro.numero_cuenta}")
     print(f"Titular: {cuenta_ahorro.nombre_titular}")
