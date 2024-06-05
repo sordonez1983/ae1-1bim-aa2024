@@ -6,7 +6,6 @@ if not os.path.exists('cuenta_ahorros.db'):
   print("Error: El archivo de base de datos 'cuenta_ahorros.db' no existe.")
   exit(1)
 
-
 # Create engine with connection options
 engine = create_engine(
     'sqlite:///cuenta_ahorros.db',

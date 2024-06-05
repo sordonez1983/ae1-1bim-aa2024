@@ -3,13 +3,9 @@ from sqlalchemy.orm import declarative_base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import Column, Integer, String, Date
 
-
-
-
 from base_datos import engine
 
 Base = declarative_base()
-
 
 class CuentasAhorro(Base):
     __tablename__ = "Cuentas_Ahorro"  # Table name for your savings accounts
@@ -22,9 +18,3 @@ class CuentasAhorro(Base):
 
     def __str__(self):
         return f"Cuenta Ahorro No.: {self.numero_cuenta} - Titular: {self.nombre_titular} - Saldo: ${self.saldo_actual:.2f}"
-    
-
-  
-
-
-  

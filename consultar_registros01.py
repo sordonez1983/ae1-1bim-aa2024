@@ -15,8 +15,6 @@ session = Session()
 # Obtener todos los registros de la entidad Autor. Se hace uso del método query. all, significa que se obtiene todos los registros
 LocalesComida = session.query(CuentasAhorro).all()
 
-
-
 # se realiza un proceso iterativo para presentar la información
 # de cada objeto.
 for cuenta_ahorro in LocalesComida:
