@@ -1,35 +1,22 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy import Column, Integer, String, Text
+from sqlalchemy import Column, Integer, String, Decimal, Date
+
 
 from base_datos import engine
 
 Base = declarative_base()
 
 
-class LocalesComida(Base):
-    __tablename__ = "LocalesComida"
-    id_local = Column(Integer, primary_key=True)
-    nombre = Column(String(255), nullable=False)
-    tipo_comida = Column(String(255), nullable=False)
-    direccion = Column(Text, nullable=False)
-    horario_atencion = Column(Text, nullable=False)
-    calificacion = Column(Integer, nullable=False)
+class CuentasAhorro(Base):
+    __tablename__ = "Cuentas_Ahorro"  # Table name for your savings accounts
+
+    id_cuenta = Column(Integer, primary_key=True)  # Unique identifier
+    numero_cuenta = Column(String(20), unique=True, nullable=False)  # Account number (unique)
+    nombre_titular = Column(String(50), nullable=False)  # Account holder name
+    saldo_actual = Column(Decimal(10, 2), nullable=False)  # Current balance with decimals
+    fecha_apertura = Column(Date, nullable=False)  # Date account was opened
 
     def __str__(self):
-        return f"{self.nombre} ({self.tipo_comida}) - {self.calificacion} estrellas"
-
-
-
-class CentrosDeportivos(Base):
-    __tablename__ = "CentrosDeportivos"
-    id_centro = Column(Integer, primary_key=True)
-    nombre = Column(String(255), nullable=False)
-    tipo_deporte = Column(String(255), nullable=False)
-    direccion = Column(Text, nullable=False)
-    horario_atencion = Column(Text, nullable=False)
-    costo_membresia = Column(Integer, nullable=False)
-
-    def __str__(self):
-        return f"{self.nombre} ({self.tipo_deporte}) - Costo: ${self.costo_membresia}"
+        return f"Cuenta Ahorro No.: {self.numero_cuenta} - Titular: {self.nombre_titular} - Saldo: ${self.saldo_actual:.2f}"
