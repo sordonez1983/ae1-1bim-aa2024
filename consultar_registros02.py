@@ -19,7 +19,7 @@ session = Session()
 # Se hace uso del método query.
 # filter, permite agregrar condiciones a la búsqueda, con base
 # a las propiedades de la entidad
-CuentasAhorro  = session.query(CuentasAhorro).filter(CuentasAhorro.nombre_titular=="Juan Pérez")
+CuentasAhorro  = session.query(CuentasAhorro).filter(CuentasAhorro.nombre_titular=="Aníbal Sánchez")
 
 # La variable lista_autores, tendrá un listado de objetos de tipo Autor que
 # tengan en la propiedad de nacionalidad el valor: ecuatoriana
