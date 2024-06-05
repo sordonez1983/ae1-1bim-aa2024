@@ -1,8 +1,8 @@
 from sqlalchemy.orm import sessionmaker
 # se importa la clase(s) del
 # archivo crear_entidades
-from crear_entidades import LocalesComida
-from crear_entidades import CentrosDeportivos
+from crear_entidades import CuentasAhorro
+
 # se importa el engine
 from base_datos import engine
 
@@ -19,14 +19,12 @@ session = Session()
 # Se hace uso del método query.
 # filter, permite agregrar condiciones a la búsqueda, con base
 # a las propiedades de la entidad
-LocalesComida  = session.query(LocalesComida).filter(LocalesComida.nombre=="Pizza Italia")
-CentrosDeportivos = session.query(CentrosDeportivos).filter(CentrosDeportivos.nombre=="Piscina Olímpica")
+CuentasAhorro  = session.query(CuentasAhorro).filter(CuentasAhorro.nombre_titular=="Juan Pérez")
+
 # La variable lista_autores, tendrá un listado de objetos de tipo Autor que
 # tengan en la propiedad de nacionalidad el valor: ecuatoriana
 
 # se realiza un proceso iterativo para presentar la información
 # de cada objeto.
-for l in LocalesComida:
-        print(l)
-for l in CentrosDeportivos:
+for l in CuentasAhorro:
         print(l)

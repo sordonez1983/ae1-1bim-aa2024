@@ -2,8 +2,8 @@
 
 from sqlalchemy.orm import sessionmaker
 # se importa la clase(s) del archivo crear_entidades
-from crear_entidades import LocalesComida
-from crear_entidades import CentrosDeportivos
+from crear_entidades import CuentasAhorro
+
 # se importa el engine
 from base_datos import engine
 
@@ -13,14 +13,16 @@ Session = sessionmaker(bind=engine) # Se usa el engine
 session = Session()
 
 # Obtener todos los registros de la entidad Autor. Se hace uso del método query. all, significa que se obtiene todos los registros
-LocalesComida = session.query(LocalesComida).all()
+LocalesComida = session.query(CuentasAhorro).all()
 
-CentrosDeportivos  = session.query(CentrosDeportivos).all()
-# La variable lista_autores, tendrá un listado de objetos de tipo Autor.
+
 
 # se realiza un proceso iterativo para presentar la información
 # de cada objeto.
-for l in LocalesComida:
-  print(l)
-for l in CentrosDeportivos:   
-    print(l)
+for cuenta_ahorro in LocalesComida:
+    # Acceso a todos los atributos de cuenta_ahorro aqui
+    print(f"Número de cuenta: {cuenta_ahorro.numero_cuenta}")
+    print(f"Titular: {cuenta_ahorro.nombre_titular}")
+    print(f"Saldo: ${cuenta_ahorro.saldo_actual:.2f}")
+    print(f"Fecha de apertura: {cuenta_ahorro.fecha_apertura}")
+    print("----------------------------")  # Separador entre cuentas  
